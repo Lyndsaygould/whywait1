@@ -1,0 +1,19 @@
+<ion-header>
+    <ion-navbar no-border-bottom>
+        <ion-searchbar placeholder="Filter Items" showCancelButton color="danger" (ionInput)="filterItems($event)"></ion-searchbar>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-list>
+        <ion-item *ngFor="let item of items" (click)="goToSelectedPartner(item.id)">
+            <ion-avatar item-left>
+                <img src="../../assets/imgs/logo.png" alt="{{item.businessName}}'s logo">
+            </ion-avatar>
+            <h2>{{item.businessName}}</h2>
+            <p>{{item.distance}} miles</p>
+        </ion-item>
+    </ion-list>
+
+</ion-content>

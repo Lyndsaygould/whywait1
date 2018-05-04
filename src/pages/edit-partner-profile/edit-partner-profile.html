@@ -1,0 +1,135 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Edit Partner Profile</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item (click)="updateBusName()">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6> Name </ion-col>
+          <ion-col col-6 *ngIf="businessInfo?.businessName">
+            {{businessInfo?.businessName}}
+          </ion-col>
+          <ion-col col-6 class="placeholder-profile" *ngIf="!businessInfo?.businessName">
+            <span>Add business name</span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item (click)="updateBusType()">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6> Type </ion-col>
+          <ion-col col-6 *ngIf="businessInfo?.businessType">
+            {{businessInfo?.businessType}}
+          </ion-col>
+          <ion-col col-6 class="placeholder-profile" *ngIf="!businessInfo?.businessType">
+            <span>Add business type</span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item (click)="updateBusDesc()">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6> Description </ion-col>
+          <ion-col col-6 *ngIf="businessInfo?.businessDesc">
+            {{businessInfo?.businessDesc}}
+          </ion-col>
+          <ion-col col-6 class="placeholder-profile" *ngIf="!businessInfo?.businessDesc">
+            <span>Add business desc</span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item (click)="updateBusAddress()">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6> Add business Address </ion-col>
+          <ion-col col-6 *ngIf="businessInfo?.businessAddress">
+            {{businessInfo?.businessAddress}}
+          </ion-col>
+          <ion-col col-6 class="placeholder-profile" *ngIf="!businessInfo?.businessAddress">
+            <span>Add business address</span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item (click)="updateBusPostcode()">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6> Postcode </ion-col>
+          <ion-col col-6 *ngIf="businessInfo?.businessPostcode">
+            {{businessInfo?.businessPostcode}}
+          </ion-col>
+          <ion-col col-6 class="placeholder-profile" *ngIf="!businessInfo?.businessPostcode">
+            <span>Add business postcode</span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item (click)="updateBusCountry()">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6> Country </ion-col>
+          <ion-col col-6 *ngIf="businessInfo?.businessCountry">
+            {{businessInfo?.businessCountry}}
+          </ion-col>
+          <ion-col col-6 class="placeholder-profile" *ngIf="!businessInfo?.businessCountry">
+            <span>Add business country</span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item (click)="updateBusFacilities()">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6> Facilities </ion-col>
+          <ion-col col-6 *ngIf="businessInfo?.businessFacilities">
+            {{businessInfo?.businessFacilities}}
+          </ion-col>
+          <ion-col col-6 class="placeholder-profile" *ngIf="!businessInfo?.businessFacilities">
+            <span>Add business facilities</span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item (click)="updateBusPhone()">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6> Phone </ion-col>
+          <ion-col col-6 *ngIf="businessInfo?.businessPhone">
+            {{businessInfo?.businessPhone}}
+          </ion-col>
+          <ion-col col-6 class="placeholder-profile" *ngIf="!businessInfo?.businessPhone">
+            <span>Add business phone</span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item (click)="updateBusManager()">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6> Manager Name </ion-col>
+          <ion-col col-6 *ngIf="businessInfo?.businessManager">
+            {{businessInfo?.businessManager}}
+          </ion-col>
+          <ion-col col-6 class="placeholder-profile" *ngIf="!businessInfo?.businessManager">
+            <span>Add business manager name</span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>optionsModal</ion-title>
+  </ion-navbar>
+  <button ion-button (click)="closeModal()">Close Modal</button>
+</ion-header>
+
+<ion-content padding>
+  <h1 class="center">{{itemName}}</h1>
+
+  <ion-list radio-group>
+    <ion-list-header>
+      Choice of style
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Option</ion-label>
+      <ion-radio value="option1"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Option</ion-label>
+      <ion-radio value="option2"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Option</ion-label>
+      <ion-radio value="option3"></ion-radio>
+    </ion-item>
+
+    <ion-list-header>Special Instructions</ion-list-header>
+    <ion-item>
+      <ion-input type="text" placeholder="Add a note (no sauce, extra cheese etc.)"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button icon-only>
+    <ion-icon name="remove"></ion-icon>
+  </button>
+
+  {{quantity}}
+
+  <button ion-button icon-only>
+    <ion-icon name="add"></ion-icon>
+  </button>
+</ion-content>

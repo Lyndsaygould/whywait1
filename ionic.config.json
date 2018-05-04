@@ -1,0 +1,8 @@
+{
+  "name": "whywait5",
+  "app_id": "112c0c2c",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

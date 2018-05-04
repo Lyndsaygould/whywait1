@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Add Item</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="main-view">
+  <div class="overlay"></div>
+  <div class="modal_content">
+  <ion-item>
+    <ion-label stacked>Item Name</ion-label>
+    <ion-input [(ngModel)]="itemName" type="text"
+               placeholder="Item name">
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>Price</ion-label>
+    <ion-input [(ngModel)]="itemPrice" type="number"
+               placeholder="Price">
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>Type</ion-label>
+    <ion-input [(ngModel)]="itemType" type="text"
+               placeholder="Type?">
+    </ion-input>
+  </ion-item>
+  <ion-item>s
+    <ion-label>Description</ion-label>
+    <ion-input [(ngModel)]="itemDesc" type="text"
+               placeholder="Desc?">
+    </ion-input>
+  </ion-item>
+
+</div>
+</ion-content>
+
+<ion-footer>
+  <button ion-button block
+          (click)="createItem(itemName, itemType, itemPrice, itemDesc)">
+    Create Item
+  </button>
+</ion-footer>

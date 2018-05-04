@@ -1,0 +1,46 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Write a Review</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label stacked>Author</ion-label>
+    <ion-input [(ngModel)]="reviewAuthor" type="text"
+               placeholder="Author Name">
+    </ion-input>
+  </ion-item>
+    <ion-item>
+      <ion-label stacked>Review Title</ion-label>
+      <ion-input [(ngModel)]="reviewTitle" type="text"
+                 placeholder="Title">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+    <ion-label stacked>Review</ion-label>
+    <ion-input [(ngModel)]="reviewBody" type="text"
+               placeholder="Write your review here...">
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>Review Rating</ion-label>
+    <ion-input [(ngModel)]="reviewRating" type="number"
+               placeholder="Rating">
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Review Date</ion-label>
+    <ion-input [(ngModel)]="reviewDate" type="text"
+               placeholder="Date">
+    </ion-input>
+  </ion-item>
+  <button ion-button block
+          (click)="createReview(reviewAuthor, reviewTitle, reviewBody, reviewRating, reviewDate)">
+    Submit Review
+  </button>
+</ion-content>

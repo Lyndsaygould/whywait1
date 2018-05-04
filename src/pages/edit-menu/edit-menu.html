@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar *ngIf="showNavbar">
+    <ion-title>Edit Menu</ion-title>
+  </ion-navbar>
+
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="partnerNav">
+      <ion-segment-button (click)="pushInfo()" value="information">
+        Information
+      </ion-segment-button>
+      <ion-segment-button (click)="openBooking()" value="bookTable">
+        Book A Table
+      </ion-segment-button>
+      <ion-segment-button (click)="pushViewMenu()" value="viewMenu" class="segment-activated">
+        View Menu
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+</ion-header>
+<ion-content padding>
+  <ion-item (click)="addItem()">
+  <button ion-button icon-left item-end>
+    <ion-icon name="add"></ion-icon>
+    Add item to menu
+  </button>
+  </ion-item>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of itemList">
+      <ion-item (click)="goToItemDetail(item.id)">
+        <h2>{{item.name}}</h2>
+        <p>Price: <strong>${{item.price}}</strong></p>
+        <p>Desc: <strong>{{item.desc}}</strong></p>
+      </ion-item>
+      <ion-item-options>
+        <button ion-button color="secondary" (click)="editItem(item)"><ion-icon name="build"></ion-icon>Edit</button>
+        <button ion-button color="danger" (click)="removeItem(item)"><ion-icon name="trash"></ion-icon>Delete</button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

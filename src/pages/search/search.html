@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Search</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-searchbar
+          [(ngModel)]="searchTerm"
+          (keyup.enter)="searchByKeyword(searchTerm)">
+  </ion-searchbar>
+  <button ion-button (click)="launchLocationPage()">Launch</button>
+  <button (click)="goToProfile()">View Profile</button>
+  <button (click)="goToEditProfile()">Edit Profile</button>
+
+  <button (click)="goToList()">View Items</button>
+
+  <button (click)="createPartnerProfile()">Create Partner Profile</button>
+  <button (click)="editPartnerProfile()">Edit Partner Profile</button>
+  <button (click)="editMenu()">Edit Menu</button>
+
+
+  <button (click)="createReview()">Write a Review</button>
+  <button (click)="goToManageTables()">Manage Tables</button>
+
+  <ion-item *ngIf="recentVisitDetails.length">
+    <h2>Recently Visited</h2>
+    <span *ngFor="let item of recentVisitDetails" (click)="goToSelectedPartner(item.id)"><img class="recent-img" src="{{item.img}}" alt="{{item.name}}"></span>
+  </ion-item>
+</ion-content>

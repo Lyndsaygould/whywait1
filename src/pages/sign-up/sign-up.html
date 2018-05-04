@@ -1,0 +1,44 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Sign Up</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <img src="../assets/imgs/logo.png" style="display: block; width: 30%; height: auto; margin-left: auto; margin-right: auto;">
+  <ion-list inset>
+      <form [formGroup]="signupForm" (submit)="signupUser()" novalidate>
+        <ion-item>
+          <ion-label stacked>Email</ion-label>
+          <ion-input formControlName="email" type="email"
+                     placeholder="Your email address"
+                     [class.invalid]="!signupForm.controls.email.valid && blur">
+          </ion-input>
+        </ion-item>
+        <span class="error-message" *ngIf="!signupForm.controls.email.valid
+&& signupForm.controls.email.touched">
+          <p>Please enter a valid email.</p>
+        </span>
+        <ion-item>
+          <ion-label stacked>Password</ion-label>
+          <ion-input formControlName="password" type="password"
+                     placeholder="Your password"
+                     [class.invalid]="!signupForm.controls.password.valid && blur">
+          </ion-input>
+        </ion-item>
+        <span class="error-message"
+                  *ngIf="!signupForm.controls.password.valid &&
+signupForm.controls.password.touched">
+          <p>Your password needs more than 6 characters.</p>
+        </span>
+        <button ion-button block type="submit" [disabled]="!signupForm.valid">
+          Create an Account
+        </button>
+      </form>
+    <p class="center"(click)="goToSignIn()">Already have an account? Sign in!</p>
+    <p class="center"(click)="goToSearchPage()">Continue as guest</p>
+  </ion-list>
+</ion-content>

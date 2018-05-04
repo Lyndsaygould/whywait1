@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar *ngIf="showNavbar">
+    <ion-title>View Menu</ion-title>
+  </ion-navbar>
+
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="partnerNav">
+      <ion-segment-button (click)="pushInfo()" value="information">
+        Information
+      </ion-segment-button>
+      <ion-segment-button (click)="openBooking()" value="bookTable">
+        Book A Table
+      </ion-segment-button>
+      <ion-segment-button (click)="pushViewMenu()" value="viewMenu" class="segment-activated">
+        View Menu
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+</ion-header>
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let item of itemList"
+              (click)="openOptions(item.name)">
+      <h2>{{item.name}}</h2>
+      <p>Price: <strong>${{item.price}}</strong></p>
+      <p>Desc: <strong>{{item.desc}}</strong></p>
+    </ion-item>
+  <p *ngIf="!itemList">
+    There are currently no items on this menu.
+  </p>
+
+  </ion-list>
+
+
+
+  <button ion-button (click)="viewOrder()">Checkout</button>
+</ion-content>

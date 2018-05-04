@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Book a Table</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="main-view">
+  <div class="overlay"></div>
+  <div class="modal_content">
+      <ion-list>
+        <ion-item>
+          <p>{{businessInfo?.businessName}}</p>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" placeholder="Name" [(ngModel)]="bookingName"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Number of People</ion-label>
+          <ion-select [(ngModel)]="numberOfPeople" interface="popover">
+            <ion-option value="1">1</ion-option>
+            <ion-option value="2" [selected]="true">2</ion-option>
+            <ion-option value="3">3</ion-option>
+            <ion-option value="4">4</ion-option>
+            <ion-option value="5">5</ion-option>
+            <ion-option value="6">6</ion-option>
+            <ion-option value="7">7</ion-option>
+            <ion-option value="8">8</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Date</ion-label>
+          <ion-datetime displayFormat="MM/DD/YYYY" pickerFormat="MMM DD" [(ngModel)]="bookingDate" [min]="minDate"></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Time</ion-label>
+          <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm" [(ngModel)]="bookingTime"></ion-datetime>
+        </ion-item>
+        {{number}}
+      </ion-list>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <button ion-button full icon-left (click)="save(bookingDate, bookingTime, bookingName, numberOfPeople, allDay = false)">
+    <ion-icon name="checkmark"></ion-icon> Confirm Booking
+  </button>
+</ion-footer>

@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Partner Profile</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label stacked>Business Name</ion-label>
+    <ion-input [(ngModel)]="businessName" type="text"
+               placeholder="Name">
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>Business Type</ion-label>
+    <ion-input [(ngModel)]="businessType" type="text"
+               placeholder="Type">
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>Address</ion-label>
+    <ion-input [(ngModel)]="businessManager" type="text"
+               placeholder="Manager Name">
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Description</ion-label>
+    <ion-input [(ngModel)]="businessDesc" type="text"
+               placeholder="Description">
+    </ion-input>
+  </ion-item>
+    <ion-item>
+      <ion-label stacked>Business Name</ion-label>
+      <ion-input [(ngModel)]="businessAddress" type="text"
+                 placeholder="Address">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Business Type</ion-label>
+      <ion-input [(ngModel)]="businessPostcode" type="text"
+                 placeholder="PostCode">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Country</ion-label>
+      <ion-input [(ngModel)]="businessCountry" type="text"
+                 placeholder="Country">
+      </ion-input>
+    </ion-item>
+  <ion-item>
+    <ion-label>Description</ion-label>
+    <ion-input [(ngModel)]="businessPhone" type="text"
+               placeholder="Phone Number">
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Facilities</ion-label>
+    <ion-input [(ngModel)]="businessFacilities" type="text"
+               placeholder="Facilities">
+    </ion-input>
+  </ion-item>
+  <button ion-button block
+          (click)="createReview(reviewAuthor, reviewTitle, reviewBody, reviewRating, reviewDate)">
+    Create Partner
+  </button>
+</ion-content>

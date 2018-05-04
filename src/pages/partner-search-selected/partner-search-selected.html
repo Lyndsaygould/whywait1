@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-navbar *ngIf="showNavbar">
+        <ion-title>partnerSearch.selected</ion-title>
+    </ion-navbar>
+
+    <ion-toolbar>
+        <ion-segment [(ngModel)]="partnerNav">
+            <ion-segment-button (click)="pushInfo()" value="information" class="segment-activated">
+                Information
+            </ion-segment-button>
+            <ion-segment-button (click)="openBooking()" value="bookTable">
+                Book A Table
+            </ion-segment-button>
+            <ion-segment-button (click)="pushViewMenu()" value="viewMenu">
+                View Menu
+            </ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+
+
+    <img src="{{businessInfo?.businessImg}}" alt="{{businessInfo?.businessName}}" />
+    <div padding>
+        <h2 class="float-left">{{businessInfo?.businessName}}</h2>
+        <button class="float-right" ion-button icon-only (click)="addToFavourites(businessInfo)">
+            <ion-icon name="star"></ion-icon>
+        </button>
+        <p class="clear-both reviews">&&&&& # Reviews</p>
+        <p class="">Food Type, Tag, Tag, Tag, Tag.</p>
+        <p class="price">Price</p>
+
+        <h3>Information</h3>
+        <p>Phone number: {{businessInfo?.businessPhone}}</p>
+        <p>Address: {{businessInfo?.businessAddress}}, {{businessInfo?.businessPostcode}}</p>
+        <p>{{businessInfo?.businessDesc}}</p>
+
+    </div>
+    <div #map id="map"></div>
+    <div #pleaseConnect id="pleaseConnect"></div>
+</ion-content>
